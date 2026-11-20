@@ -1,0 +1,399 @@
+
+/* 1. Global Settings */
+
+:root {
+    --bg-color: #0b1120;
+    --section-color: #101a2e;
+    --card-color: #152238;
+    --primary-color: #3b82f6;
+    --secondary-color: #60a5fa;
+    --text-color: #e2e8f0;
+    --muted-color: #94a3b8;
+    --border-color: #26364f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* 2. Navigation Bar */
+
+header {
+    background-color: rgba(11, 17, 32, 0.95);
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+}
+
+header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* 3. General Sections */
+
+section {
+    padding: 90px 10%;
+    text-align: center;
+}
+
+section h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* 4. Home Section */
+
+.home {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(37, 99, 235, 0.16),
+            transparent 40%
+        ),
+        linear-gradient(135deg, #0b1120, #101d35);
+    padding: 120px 10%;
+}
+
+.home h1 {
+    color: white;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.home h2 {
+    color: var(--secondary-color);
+    font-size: clamp(22px, 3vw, 30px);
+    margin-bottom: 20px;
+}
+
+.home h2::after {
+    display: none;
+}
+
+.home p {
+    max-width: 650px;
+    color: var(--muted-color);
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* 5. Buttons */
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 13px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+/* 6. About Section */
+
+#about {
+    background-color: var(--section-color);
+}
+
+#about p {
+    max-width: 750px;
+    margin: auto;
+    color: var(--muted-color);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* 7. Skills Section */
+
+#skills {
+    background-color: var(--bg-color);
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.skills div {
+    background-color: var(--card-color);
+    color: var(--secondary-color);
+    padding: 16px 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skills div:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* 8. Projects Section */
+
+#projects {
+    background-color: var(--section-color);
+}
+
+.project {
+    background-color: var(--card-color);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 650px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.project h3 {
+    color: var(--secondary-color);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project p {
+    color: var(--muted-color);
+}
+
+/* 9. Contact Section */
+
+#contact {
+    background-color: var(--bg-color);
+}
+
+#contact p {
+    color: var(--muted-color);
+    margin: 12px 0;
+}
+
+#contact a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 10. Footer */
+
+footer {
+    background-color: #070d19;
+    color: var(--muted-color);
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+/* 11. Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home h1,
+.home h2,
+.home p,
+.home .btn {
+    animation: fadeIn 0.8s ease both;
+}
+
+.home h2 {
+    animation-delay: 0.15s;
+}
+
+.home p {
+    animation-delay: 0.3s;
+}
+
+.home .btn {
+    animation-delay: 0.45s;
+}
+
+/* 12. Tablet Responsive Design */
+
+@media (max-width: 900px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .home {
+        padding: 100px 6%;
+    }
+}
+
+/* 13. Mobile Responsive Design */
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 15px;
+    }
+
+    header h2 {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 10px 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    section h2 {
+        font-size: 27px;
+    }
+
+    .home {
+        min-height: 70vh;
+        padding: 85px 6%;
+    }
+
+    .home h1 {
+        font-size: 32px;
+    }
+
+    .home h2 {
+        font-size: 23px;
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    .skills {
+        gap: 12px;
+    }
+
+    .skills div {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .project {
+        padding: 22px;
+    }
+}
+
+/* 14. Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
